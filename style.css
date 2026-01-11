@@ -1,0 +1,305 @@
+/* Import Font Keren (Poppins) dari Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* --- GLOBAL STYLE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* --- KONTAINER UTAMA --- */
+.container {
+    background-color: white;
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: auto;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* --- TOOLBAR & SEARCH --- */
+/* Kotak pembungkus agar Tombol Tambah & Search sejajar */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    gap: 10px;
+    flex-wrap: wrap; /* Supaya responsif */
+}
+
+/* Form Search */
+form.search-form {
+    flex-direction: row; 
+    gap: 8px;
+    margin: 0;
+}
+
+/* Input khusus pencarian */
+input.search-input {
+    width: 250px;
+    margin-bottom: 0; 
+    padding: 10px;
+}
+
+/* Tombol Cari (Biru) */
+.btn-cari {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 500;
+}
+.btn-cari:hover { background-color: #2563eb; }
+
+/* Tombol Reset (Merah X) */
+.btn-reset {
+    background-color: #ef4444;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.btn-reset:hover { background-color: #dc2626; }
+
+
+/* --- TOMBOL UMUM --- */
+a.btn, button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+/* Tombol Hijau (Tambah/Simpan) */
+.btn-tambah, button[type="submit"] {
+    background-color: #10b981;
+    color: white;
+    border: none;
+}
+.btn-tambah:hover, button[type="submit"]:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Tombol Merah (Logout/Hapus) */
+.btn-logout, .btn-hapus {
+    background-color: #ef4444;
+    color: white;
+}
+.btn-logout:hover, .btn-hapus:hover {
+    background-color: #dc2626;
+}
+
+/* Tombol Edit (Kuning/Oranye) */
+.btn-edit {
+    color: #d97706;
+    font-weight: bold;
+    text-decoration: none;
+}
+.btn-edit:hover { text-decoration: underline; }
+
+/* Link Batal */
+.btn-batal {
+    color: #6b7280;
+    margin-left: 15px;
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+/* --- TABEL --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px #e5e7eb;
+}
+
+thead {
+    background-color: #3b82f6;
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+tr:nth-child(even) { background-color: #f9fafb; }
+tr:hover { background-color: #f3f4f6; }
+
+/* --- PAGINATION --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 5px;
+}
+
+.pagination a {
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    color: #555;
+    background: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.pagination a.active {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+.pagination a:hover:not(.active) { background-color: #e5e7eb; }
+
+/* --- FORM UMUM --- */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+}
+
+input[type="text"], input[type="number"], input[type="password"] {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Login Box */
+.login-wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Alert Pesan */
+.alert { padding: 12px; margin-bottom: 20px; border-radius: 8px; text-align: center; font-size: 14px; font-weight: 500;}
+.alert-danger { background-color: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+.alert-warning { background-color: #ffedd5; color: #c2410c; border: 1px solid #fed7aa; }
+.alert-success { background-color: #d1fae5; color: #047857; border: 1px solid #a7f3d0; }
+
+/* --------------------------------------------------------- */
+/* --- MEDIA QUERIES (RESPONSIF UNTUK HP) --- */
+/* --------------------------------------------------------- */
+@media (max-width: 768px) {
+    
+    body {
+        padding: 10px; /* Kurangi padding biar luas di layar kecil */
+    }
+
+    .container {
+        padding: 15px; /* Kontainer lebih rapat */
+    }
+
+    /* Agar Tabel bisa di-scroll ke samping di HP jika kepanjangan */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Judul agak dikecilkan */
+    h2 { font-size: 18px; }
+
+    /* Toolbar jadi vertikal di HP (atas bawah) */
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch; /* Tombol jadi lebar penuh */
+    }
+
+    .search-input {
+        width: 100%; /* Input search full width */
+    }
+
+    /* Tombol jadi lebar enak dipencet jempol */
+    .btn-tambah, .btn-cari {
+        width: 100%;
+        text-align: center;
+        margin-top: 5px;
+        padding: 12px;
+    }
+    
+    /* Tombol Edit/Hapus di tabel agak besar dikit */
+    .btn-edit, .btn-hapus {
+        padding: 8px 12px;
+        display: inline-block;
+    }
+    
+    /* Form Search jadi column */
+    form.search-form {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .btn-logout {
+        width: 100%;
+        text-align: center;
+    }
+}

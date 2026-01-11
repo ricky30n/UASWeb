@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Jika yang diminta bukan file sungguhan (!-f)
+RewriteCond %{REQUEST_FILENAME} !-f
+# Dan bukan folder sungguhan (!-d)
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Maka alihkan semuanya ke index.php dengan parameter 'url'
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
